@@ -1,0 +1,13 @@
+<h3>RESULTADO</h3>
+
+<div class="block-content">
+    <div *ngIf="resultado.erro == ''; then naoTemErro else temErro"></div>
+    <ng-template #naoTemErro>
+        <p>{{resultado.resultado}}</p>
+    </ng-template>
+    <ng-template #temErro>
+        <p>{{resultado.erro}}</p>
+    </ng-template>
+
+    <button class="button" (click)="voltar()">Voltar</button>
+</div>

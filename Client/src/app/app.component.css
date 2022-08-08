@@ -1,0 +1,17 @@
+.app-menu {
+    min-width: 450px;
+    background-color: #4C776E;
+    padding: 15px;
+    display: flex;
+}
+
+.app-content {
+    background-color: #f5f4f2;
+    width: 450px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}

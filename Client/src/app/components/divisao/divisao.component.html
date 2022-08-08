@@ -1,0 +1,28 @@
+<h3>DIVISÃO</h3>
+
+<form class="block-content" [formGroup]="divisaoForm" (ngSubmit)="calcular()">
+    <div>
+        <div class="label-input">
+            <label for="dividendo">
+                Dividendo
+                <span class="alert-error" *ngIf="dividendo.errors?.['required']">
+                    Campo obrigatório
+                </span>
+            </label>
+        </div>
+
+        <input id="dividendo" type="number" formControlName="dividendo" placeholder="Insira um número">
+    </div>
+
+    <div>
+        <label for="divisor">
+            Divisor
+            <span class="alert-error" *ngIf="divisor.errors?.['required']">
+                Campo obrigatório
+            </span>
+        </label>
+        <input id="divisor" type="number" formControlName="divisor" placeholder="Insira um número">
+    </div>
+
+    <button class="button" type="submit" [disabled]="!divisaoForm.valid">Calcular</button>
+</form>

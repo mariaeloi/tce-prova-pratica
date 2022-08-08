@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+h3 {
+    padding-top: 35px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    color: #F5CE7F;
+    border-bottom: solid 1px #dcdbd8;
+}
+
+.block-content {
+    margin: 15px auto;
+    width: 300px;
+}
+
+button {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    margin: 15px 0 50px 0;
+    background-color: #66978e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5c8d84;
+}
+
+button:disabled {
+    background-color: #dcdbd8;
+}
