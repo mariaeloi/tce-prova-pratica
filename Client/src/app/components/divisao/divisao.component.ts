@@ -31,7 +31,8 @@ export class DivisaoComponent implements OnInit {
   calcular(): void {
     if(this.divisaoForm.valid) {
       let divisao: Divisao = this.divisaoForm.value as Divisao;
-      this.divisaoService.calcularDivisao(divisao).subscribe({
+      // this.divisaoService.getDivisao(divisao).subscribe({
+      this.divisaoService.postDivisao(divisao).subscribe({
         next: (v) => {
           this.divisaoForm.reset();
           this.router.navigate(['/resultado'], { state: v });
