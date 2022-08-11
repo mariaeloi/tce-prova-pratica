@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Divisao } from 'src/app/models/divisao.model';
 import { DivisaoService } from 'src/app/services/divisao.service';
@@ -13,7 +13,7 @@ export class DivisaoComponent implements OnInit {
 
   divisaoForm = this.formBuilder.group({
     dividendo: [undefined, [Validators.required]],
-    divisor: [undefined, [Validators.required]]
+    divisor: [undefined, [Validators.required, this.divisorZeroValidator]]
   })
 
   constructor(
@@ -43,5 +43,10 @@ export class DivisaoComponent implements OnInit {
         }
       });
     }
+  }
+
+  divisorZeroValidator(control: FormControl): ValidationErrors | null {
+    const value: number = control.value;
+    return (value == 0) ? { zero: true } : null;
   }
 }

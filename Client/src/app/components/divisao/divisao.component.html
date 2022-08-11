@@ -20,6 +20,9 @@
             <span class="alert-error" *ngIf="divisor.errors?.['required']">
                 Campo obrigatório
             </span>
+            <span class="alert-error" *ngIf="divisor.errors?.['zero']">
+                Divisor não pode ser 0
+            </span>
         </label>
         <input id="divisor" type="number" formControlName="divisor" placeholder="Insira um número">
     </div>
