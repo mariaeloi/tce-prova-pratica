@@ -14,7 +14,10 @@ builder.Services.AddScoped<IDivisaoService, DivisaoService>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: "AllowClient",
-        policy  => { policy.WithOrigins("http://localhost:4200"); });
+        policy  => { 
+            policy.WithOrigins("http://localhost:4200");
+            policy.AllowAnyHeader();
+        });
 });
 
 var app = builder.Build();
